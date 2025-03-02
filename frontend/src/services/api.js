@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/v1';
+const API_URL = 'https://hospital-management-backend-0ye7.onrender.com/api';
+
+export const api = axios.create({
+    baseURL: API_URL
+});
 
 export const createHospital = async (hospitalData) => {
     return await axios.post(`${API_URL}/hospitals/create`, hospitalData);
