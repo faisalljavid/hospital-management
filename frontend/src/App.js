@@ -28,10 +28,6 @@ function App() {
             <Route path="/edit/:id" element={<EditHospital />} />
           </Routes>
         </main>
-
-        <footer>
-          <p>Hospital Management System &copy; 2023</p>
-        </footer>
       </div>
     </BrowserRouter>
   );
