@@ -25,7 +25,7 @@ const HospitalList = () => {
         if (city) {
             fetchHospitals();
         }
-    }, [city]);
+    }, [city, fetchHospitals]);
 
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this hospital?')) {
