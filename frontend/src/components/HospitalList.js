@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { getHospitalsByCity, deleteHospital } from '../services/api';
 import { Link } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ const HospitalList = () => {
     const [city, setCity] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const fetchHospitals = async () => {
+    const fetchHospitals = useCallback(async () => {
         if (!city) return;
 
         setLoading(true);
@@ -19,7 +19,7 @@ const HospitalList = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [city]);
 
     useEffect(() => {
         if (city) {
