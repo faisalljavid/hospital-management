@@ -1,38 +1,306 @@
-.App {
-  text-align: center;
+/* General styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+header {
+  background-color: #343a40;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header nav ul li {
+  margin-left: 1.5rem;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* Form styles */
+.form-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group select[multiple] {
+  height: 150px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0069d9;
+}
+
+.btn-submit {
+  width: 100%;
+}
+
+/* Hospital list styles */
+.hospitals-container {
+  padding: 1rem;
+}
+
+.search-bar {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  border-radius: 0 4px 4px 0;
+}
+
+.hospitals-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.hospital-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.hospital-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.hospital-info {
+  padding: 1.5rem;
+}
+
+.card-actions {
+  display: flex;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.btn-view,
+.btn-edit,
+.btn-delete {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.btn-view {
+  background-color: #28a745;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-edit {
+  background-color: #ffc107;
+  color: #212529;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Hospital detail styles */
+.hospital-detail-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.hospital-main-image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1rem 0 2rem;
+}
+
+.hospital-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.info-card {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.hospital-details-section {
+  margin-top: 2rem;
+}
+
+.hospital-stats {
+  display: flex;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Edit hospital styles */
+.edit-hospital-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.image-input-group {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.image-input-group input {
+  flex: 1;
+  margin-right: 0.5rem;
+}
+
+.btn-add,
+.btn-remove {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+.btn-add {
+  background-color: #6c757d;
+  margin-top: 0.5rem;
+}
+
+.btn-remove {
+  background-color: #dc3545;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-save {
+  background-color: #28a745;
+  flex: 1;
+}
+
+.btn-cancel {
+  background-color: #6c757d;
+  flex: 1;
 }
