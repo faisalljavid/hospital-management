@@ -6,21 +6,21 @@ export const api = axios.create({
 });
 
 export const createHospital = async (hospitalData) => {
-    return await axios.post(`${API_URL}/hospitals/create`, hospitalData);
+    return await axios.post(`${API_URL}/create`, hospitalData);
 };
 
 export const getHospitalsByCity = async (city) => {
-    return await axios.get(`${API_URL}/hospitals?city=${city}`);
+    return await axios.get(`${API_URL}/?city=${city}`);
 };
 
 export const deleteHospital = async (id) => {
-    return await axios.delete(`${API_URL}/hospitals/delete?id=${id}`);
+    return await axios.delete(`${API_URL}/delete?id=${id}`);
 };
 
 export const updateHospital = async (id, updateData) => {
-    return await axios.put(`${API_URL}/hospitals/update?id=${id}`, updateData);
+    return await axios.put(`${API_URL}/update?id=${id}`, updateData);
 };
 
 export const addHospitalDetails = async (id, detailsData) => {
-    return await axios.post(`${API_URL}/hospitals/details?id=${id}`, detailsData);
+    return await axios.post(`${API_URL}/details?id=${id}`, detailsData);
 };
