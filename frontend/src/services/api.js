@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://hospital-management-backend-0ye7.onrender.com/api/v1';
+const API_URL = 'https://hospital-management-backend-0ye7.onrender.com/api/v1/hospitals';
 export const api = axios.create({
     baseURL: API_URL
 });
