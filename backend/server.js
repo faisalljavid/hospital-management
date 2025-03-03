@@ -12,9 +12,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://loquacious-manatee-f2c86e.netlify.app/'],
+    origin: '*',
     credentials: true
 }));
 
